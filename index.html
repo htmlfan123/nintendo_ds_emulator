@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <title>ds emulator</title>
+    <style>
+        body {
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+  <div id="gamearea">
+    <div id="game"></div>
+</div>
+
+<script>
+    document.getElementById('rom-input').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const bloburl = URL.createObjectURL(file);
+
+        window.EJS_player = '#game';
+        window.EJS_core = 'nds';
+        window.EJS_gameUrl = bloburl;
+        window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
+
+        document.getElementById('upload-box').style.display = 'none';
+        document.getElementById('gamearea').style.display = 'block';
+
+        const loaderscript = document.createElement('script');
+        loaderscript.src = 'https://cdn.emulatorjs.org/stable/data/loader.js';
+        document.body.appendChild(loaderscript);
+    });
+</script>
+</body>
+</html>
