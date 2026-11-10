@@ -6,6 +6,16 @@
         body {
             background-color: cyan;
         }
+
+        #gamearea {
+            width: 100%;
+            height: 600px;
+        }
+
+        #game {
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -22,7 +32,6 @@
 <script>
 document.getElementById('rom-input').addEventListener('change', function(event) {
     const file = event.target.files[0];
-
     if (!file) return;
 
     const bloburl = URL.createObjectURL(file);
