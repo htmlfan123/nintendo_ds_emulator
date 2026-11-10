@@ -10,33 +10,34 @@
 </head>
 <body>
 
-<h2>select a file</h2>
-<p>upload a .nds or .zip file</p>
+<h2>select nintendo ds game</h2>
+<p>choose a .nds or .zip file</p>
 
 <input type="file" id="rom-input" accept=".nds,.zip">
 
-<div id="gamearea">
+<div id="gamearea" style="display:none;">
     <div id="game"></div>
 </div>
 
 <script>
-    document.getElementById('rom-input').addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (!file) return;
+document.getElementById('rom-input').addEventListener('change', function(event) {
+    const file = event.target.files[0];
 
-        const bloburl = URL.createObjectURL(file);
+    if (!file) return;
 
-        window.EJS_player = '#game';
-        window.EJS_core = 'nds';
-        window.EJS_gameUrl = bloburl;
-        window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
+    const bloburl = URL.createObjectURL(file);
 
-        document.getElementById('gamearea').style.display = 'block';
+    window.EJS_player = '#game';
+    window.EJS_core = 'nds';
+    window.EJS_gameUrl = bloburl;
+    window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
 
-        const loaderscript = document.createElement('script');
-        loaderscript.src = 'https://cdn.emulatorjs.org/stable/data/loader.js';
-        document.body.appendChild(loaderscript);
-    });
+    document.getElementById('gamearea').style.display = 'block';
+
+    const loaderscript = document.createElement('script');
+    loaderscript.src = 'https://cdn.emulatorjs.org/stable/data/loader.js';
+    document.body.appendChild(loaderscript);
+});
 </script>
 
 </body>
