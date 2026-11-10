@@ -1,2 +1,2 @@
-# nintendo ds emulator
+nintendo ds emulator
 simple ds emulator
