@@ -9,7 +9,13 @@
     </style>
 </head>
 <body>
-  <div id="gamearea">
+
+<h2>select a file</h2>
+<p>upload a .nds or .zip file</p>
+
+<input type="file" id="rom-input" accept=".nds,.zip">
+
+<div id="gamearea">
     <div id="game"></div>
 </div>
 
@@ -25,7 +31,6 @@
         window.EJS_gameUrl = bloburl;
         window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
 
-        document.getElementById('upload-box').style.display = 'none';
         document.getElementById('gamearea').style.display = 'block';
 
         const loaderscript = document.createElement('script');
@@ -33,5 +38,6 @@
         document.body.appendChild(loaderscript);
     });
 </script>
+
 </body>
 </html>
