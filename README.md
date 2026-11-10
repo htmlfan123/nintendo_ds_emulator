@@ -10,11 +10,12 @@ This repository is a minimal front-end emulator wrapper. The main entry point is
 - creates an object URL for the selected game
 - configures EmulatorJS runtime globals
 - injects the EmulatorJS loader script
-- renders the ROM inside the page
+- renders the ROM inside the page.
 
-## architecture
+  ## how to use
+  just go to https://dsemu-silk.vercel.app/
 
-The application is intentionally small and client-side only:
+## info
 
 - `index.html` contains the UI, ROM upload logic, and emulator bootstrapping
 - `EJS_player` is set to the target DOM element
@@ -32,7 +33,7 @@ The application is intentionally small and client-side only:
 
 ## requirements
 
-- modern browser with JavaScript enabled
+- modern browser like edge or chrome  with JavaScript enabled
 - internet access for EmulatorJS CDN assets
 - local ROM file for gameplay
 
